@@ -79,6 +79,18 @@ export function BoardRental() {
     );
 
   }
+  const handleEdit = (e: any) => {
+    let id = e.target.id;
+    for (let i = 0; i < data.length; i++) {
+      if (data[i]['_id']==id) {
+          setNameChange(data[i]['name']);
+          setAddrChange(data[i]['address']);
+          setImagesBase(data[i]['image']);
+          setFlag(id);
+      }
+    }
+    console.log(data, id);
+  }
   const handleSave = () => {
     console.log(baseImage, name, addr, flag);
     RentalService.addRental(
@@ -167,7 +179,7 @@ export function BoardRental() {
                 <td>{obj['name']}</td>
                 <td>{obj['address']}</td>
                 <td><img src={obj['image']} alt="" width="100" /></td>
-                <td><button id={obj['_id']} onClick={handleRemove}>Remove</button></td>
+                <td><button id={obj['_id']} onClick={handleRemove}>Remove</button><button id={obj['_id']} onClick={handleEdit}>Edit</button></td>
               </tr>
             ))}
           </tbody>
