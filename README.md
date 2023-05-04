@@ -55,7 +55,7 @@ You need setup prerequisites:
    cd backend
    npm install
    
-   cd frontend/React_TS
+   cd frontend
    npm install 
    ```
 4. Rename and edit file in `Exemple.env` to `.env`
@@ -71,7 +71,7 @@ You need setup prerequisites:
    cd backend
    npm install 
    
-   cd frontend/React_TS
+   cd frontend
    npm run start
    ```
 
